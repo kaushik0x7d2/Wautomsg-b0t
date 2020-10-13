@@ -1,9 +1,10 @@
+#from positionfinder import positions
+#from pynput.mouse import Listener          
 import pyautogui 
 import time
 import sys
 from pyfiglet import Figlet
-#from positionfinder import positions
-#from pynput.mouse import Listener          
+from pynput.mouse import Listener          
 
 
 def br():
@@ -33,7 +34,7 @@ def alert():
 		cl=cl-1
 	print("b0t STARTED...")	
 
-'''
+
 def on_click(x, y, button, pressed):       
 	if pressed:
 		global pos_x
@@ -43,7 +44,7 @@ def on_click(x, y, button, pressed):
 		pos_y = y
 	if not pressed:
 		return False
-'''
+
 
 def home():
 	f1 = Figlet(font='rounded')
@@ -135,7 +136,7 @@ else:
 	print("INVALID CHOICE!")
 	exit_timer()
 	exit()
-'''
+
 print("Place your mouse pointer on the text of latest/recent message from the WhatsApp chatbox and click on it")   
 print("(Eg. place your mouse pointer on the text of 'Hi' message which was entered earlier during the setup phase)")
 input("\nPRESS ENTER AND THEN CLICK THE MESSAGE. AFTER CLICKING IT PRESS ENTER AGAIN! (MAKE SURE TO CLICK AFTER 3 Seconds)\n\nb0t:~#> ")
@@ -144,12 +145,12 @@ with Listener(
         on_click=on_click,
         ) as listener:
     listener.join()
-'''
+
 #<----------------------------------------------------->
 
 #positions
-pos_x = 1229	# value of x in positionfinder.py
-pos_y = 781	# value of y in positionfinder.py
+#pos_x = 1229	# value of x in positionfinder.py
+#pos_y = 781	# value of y in positionfinder.py
 #THIS IS FOR 1600x900 RESOLUTION, VALUES MAY CHANGE ACCORDING TO YOUR PCs RESOLUTION. (use positionfinder.py tool to find your mouse position)
 #Change These Values Before Executing
 
@@ -160,16 +161,16 @@ print("\nYou have 5 seconds to switch to WhatsApp Web.....")
 time.sleep(5)
 print("Switch to WhatsApp Web, Your running out of time...\n")
 alert()
-time.sleep(1)
+#time.sleep(1)
 pyautogui.typewrite('Wa.me/'+sender_ph)
 pyautogui.press('enter')
 position = pos_x,pos_y
 pyautogui.click(position)
-time.sleep(1)
+#time.sleep(1)
 pyautogui.press('esc')
-time.sleep(2)
+#time.sleep(2)
 pyautogui.press('esc')
-time.sleep(1)
+#time.sleep(1)
 pyautogui.typewrite('Test Message')
 pyautogui.press('enter')
 
